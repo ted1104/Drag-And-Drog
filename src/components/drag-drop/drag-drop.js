@@ -35,8 +35,17 @@ const DragAndDrop = () => {
     },
   });
 
+  //   DELETE FILE
+  const _delelte_file = (idx) => {
+    const newfiles = files.filter((item, i) => i !== idx);
+    setFiles(newfiles);
+    console.log("Deleted ", newfiles);
+  };
   const images = files.map((file, idx) => (
-    <img src={file.preview} alt="image" key={idx} className={classe.images} />
+    <div className={classe.imageDisplay} key={idx}>
+      <img src={file.preview} alt="image" key={idx} className={classe.images} />
+      <button onClick={() => _delelte_file(idx)}>Remove</button>
+    </div>
   ));
 
   //   console.log("clases ", classDrag);
@@ -47,7 +56,7 @@ const DragAndDrop = () => {
         <input {...getInputProps()} />
         <p>Drag and Drop Here</p>
       </div>
-      {images}
+      <div className={classe.mainImages}>{images}</div>
     </div>
   );
 };

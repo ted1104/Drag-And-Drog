@@ -16,3 +16,23 @@
   border: 2px dotted blue;
   background-color: burlywood;
 }
+.mainImages {
+  display: flex;
+  flex-direction: row;
+}
+.mainImages > div {
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.mainImages > div button {
+  margin-top: 5px;
+}
+/* .imageDisplay {
+  display: flex;
+
+  margin-bottom: 5px;
+}
+.imageDisplay img {
+  margin-right: 5px;
+} */
