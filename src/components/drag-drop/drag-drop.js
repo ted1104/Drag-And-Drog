@@ -9,11 +9,12 @@ const DragAndDrop = () => {
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
     onDrop: (acceptedFiles) => {
-      setFiles(
-        acceptedFiles.map((file) =>
+      setFiles([
+        ...files,
+        ...acceptedFiles.map((file) =>
           Object.assign(file, { preview: URL.createObjectURL(file) })
-        )
-      );
+        ),
+      ]);
       setClassDrag([classe.DragAndDrop]);
     },
 
