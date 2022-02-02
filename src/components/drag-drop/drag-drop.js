@@ -39,7 +39,6 @@ const DragAndDrop = () => {
   const _delelte_file = (idx) => {
     const newfiles = files.filter((item, i) => i !== idx);
     setFiles(newfiles);
-    console.log("Deleted ", newfiles);
   };
   const images = files.map((file, idx) => (
     <div className={classe.imageDisplay} key={idx}>
@@ -48,7 +47,6 @@ const DragAndDrop = () => {
     </div>
   ));
 
-  //   console.log("clases ", classDrag);
   return (
     <div>
       <h1>DRAG AND DROP</h1>
